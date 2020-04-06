@@ -5,7 +5,6 @@ with Generator;
 procedure Main is
    PwLngth : Integer;
 
-
 begin
    Put("Enter length of your password: ");
    Get(PwLngth);

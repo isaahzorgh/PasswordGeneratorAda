@@ -1,14 +1,14 @@
 package body Generator is
 
-   subtype N is Integer range 33 .. 126;
+   subtype PW_Char is Character range '!'.. '~';
+
+   package Random_N is new Ada.Numerics.Discrete_Random(PW_Char);
+   G : Random_N.Generator;
+
    function Create_Random_Character return Character is
-      package Random_N is new Ada.Numerics.Discrete_Random(N);
-      G : Random_N.Generator;
-   begin
-      Random_N.Reset(G);
-      return Character'Val(Random_N.Random(G));
+        (Random_N.Random(G));
 
-   end Create_Random_Character;
-
+begin
+   Random_N.Reset(G);
 
 end Generator;
