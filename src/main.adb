@@ -9,7 +9,6 @@ procedure Main is
 begin
    Put("Enter length of your password: ");
    Get(PwLngth);
-   Put(PwLngth);
 
    declare
       Password : String(1..PwLngth);
